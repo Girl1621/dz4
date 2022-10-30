@@ -11,16 +11,26 @@ for (int i = 1; i < b; i++)
 {
 step = step * a;
 }
-Console.WriteLine("A в степени B равно: " + step);
+Console.WriteLine("A в степени B: " + step);
 
 
 
 //Напишите программу, которая принимает на вход число
 //и выдаёт сумму цифр в числе.
 
+Console.WriteLine("введите число");
+int number = Convert.ToInt32(Console.ReadLine());
+int sum = 0;
+
+while (number > 0)
+{
+int num = number % 10;
+number = number / 10;
+sum = sum + num;
+}
+Console.WriteLine("сумма цифр равна: " + sum);
 
 
-         
 
 
 
@@ -29,24 +39,27 @@ Console.WriteLine("A в степени B равно: " + step);
 //Напишите программу, которая задаёт массив из 8 элементов 
 //и выводит их на экран.
 
-/*int[] ArrayNum = GenerateArray();
+
+int[] ArrayNum = GenerateArray();
 int[] GenerateArray()
 
 {
     int[] ArrayNum = new int[8];
-    
-    int number = Convert.ToInt32(Console.ReadLine());
-    
+
     for (int i = 0; i < ArrayNum.Length; i++)
     {
-        ArrayNum [i] = number;
+        
+        Console.WriteLine("введите число: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+        
+        ArrayNum[i] = number;
     }
     return ArrayNum;
 }
-void PrintArray(int[]col)
+void PrintArray(int[] col)
 {
     int count = col.Length;
-     
+
     int position = 0;
 
     while (position < count)
@@ -58,4 +71,4 @@ void PrintArray(int[]col)
         position++;
     }
 }
-PrintArray(ArrayNum);*/
+PrintArray(ArrayNum);
